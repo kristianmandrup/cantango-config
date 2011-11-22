@@ -17,11 +17,11 @@ end
 group :test do
   gem 'require_all', '~> 1.2.0'
 
-  # gem 'permits', :git => 'git://github.com/kristianmandrup/permits'
-
+  gem 'forgery'
+  gem 'sqlite3'
   # Data
   gem 'database_cleaner'
-  # gem 'factory_girl'
+  gem 'factory_girl'
 
   # Specs
   gem 'spork'

@@ -37,6 +37,9 @@ describe CanTango::Configuration::Modes do
     
     specify { subject.registered[:my_engine].should == MyEngine }
     specify { subject.registered_names.should include('my_engine') }
+    specify { subject.available.should include('my_engine') }    
+    specify { subject.available?('my_engine').should be_true }
+    specify { subject.available?('not_my_engine').should be_false }
   end
 
   let(:engines) do
@@ -91,8 +94,6 @@ describe CanTango::Configuration::Modes do
     its(:execution_order) { should == ['my_engine', 'my_other_engine'] }
   end
   
-  # available
-  # available? name
   # all state
   # any? state
   # clear!

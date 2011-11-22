@@ -2,6 +2,8 @@
 
 Configuration for [CanTango](https://github.com/kristianmandrup/cantango)
 
+The Configuration DSL has now been almost fully "spec'ed".
+
 ## Contributing to cantango-config
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

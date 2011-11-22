@@ -4,6 +4,7 @@ module CanTango
       autoload_modules :Generic, :ActiveRecord, :DataMapper, :MongoMapper, :Mongoid
       autoload_modules :Actions
 
+      include CanTango::Helpers::Debug
       include Singleton
       include ClassExt
 
@@ -40,8 +41,9 @@ module CanTango
       protected
 
       def all_models
-        CanTango.config.orms.registered.inject([]) do |result, orm|
-          result << adapter_for(orm).models.map(&:name)
+        CanTango.config.orms.registered.compact.inject([]) do |result, orm|
+          adapter = adapter_for(orm)
+          result << (adapter.models.map(&:name) if adapter)
           result
         end.flatten.compact
       end
@@ -49,7 +51,11 @@ module CanTango
       private
 
       def adapter_for orm
-        "CanTango::Configuration::Models::#{orm.to_s.camlize}".constantize.new
+        clazz_name = "CanTango::Configuration::Models::#{orm.to_s.camelize}"
+        clazz = clazz_name.constantize
+        clazz.new
+      rescue Exception => e
+        debug "Unknown ORM: #{orm} - no adapter defined for this ORM - #{e}"
       end
 
       def try_model model_string

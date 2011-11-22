@@ -3,11 +3,11 @@ require 'cantango'
 
 require 'cantango/configuration/shared/hash_registry_ex'
 
-class MyReg < CanTango::Configuration::HashRegistry
+class MyRegis < CanTango::Configuration::HashRegistry
 end
 
-describe MyReg do
-  subject { MyReg.new }
+describe MyRegis do
+  subject { MyRegis.new }
 
   it_should_behave_like "Hash Registry" do
     let(:hash1) do

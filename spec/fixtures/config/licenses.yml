@@ -1,4 +1,0 @@
-bloggers:
-  can:
-    manage:
-      - Comment

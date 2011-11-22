@@ -8,10 +8,6 @@ end
 
 
 describe CanTango::Configuration::UserAccount do
-  before do
-    CanTango.config.user.base_class = User
-  end
-
   subject { CanTango.config.user_account }
 
   describe 'set base class' do

@@ -13,10 +13,6 @@ shared_examples_for 'Candidate Registry' do
     {:c => 3}
   end
 
-  describe 'default settings' do
-    its(:registered)  { should be_empty }
-  end
-
   describe 'register' do
     before do
       subject.register :a, A
@@ -34,10 +30,10 @@ shared_examples_for 'Candidate Registry' do
     end
     its(:registered) { should include(*hash1.keys) }
     its(:registered_classes) { should include(*hash1.values) }
-
+    
     specify do
       lambda { subject << hash2 }.should raise_error
-    end
+    end    
   end
 
   describe 'set index []=' do

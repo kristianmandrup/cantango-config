@@ -1,4 +1,0 @@
-admin:
-  can:
-    manage:
-      - all

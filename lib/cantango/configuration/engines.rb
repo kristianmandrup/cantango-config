@@ -11,31 +11,41 @@ module CanTango
         hash.each_pair do |name, engine_class|
           raise "Class must implement the CanTango Engine API. You can start by sublclassing CanTango::Engine" if !engine? engine_class
           raise "Name of engine must be a String or Symbol" if !name.kind_of_label?
-          registered[name.to_sym] = engine_class
+          registered[name.to_s] = engine_class
         end
       end
 
       # defines the order of execution of engine in ability
-      def execution_order= *names
-        @execution_order = names.to_symbols.select {|name| available? name }
+      def set_execution_order *names        
+        @execution_order = names.flatten.uniq.map(&:to_s).select {|name| available? name }
+      end
+
+      def dont_execute name
+        execution_order.delete(name.to_s)
       end
 
       def execute_first name
-        execution_order.insert(0, name)
+        dont_execute name
+        execution_order.insert(0, name.to_s)
       end
 
       def execute_last name
-        execution_order.insert(-1, name)
+        dont_execute name
+        execution_order.insert(-1, name.to_s)
       end
 
       def execute_before existing, name
-        index = execution_order.index(existing) || 0
-        execution_order.insert(index, name)
+        dont_execute name
+        index = execution_order.index(existing.to_s) || 0
+        execution_order.insert(index, name.to_s)
+        execution_order.compact!
       end
 
       def execute_after existing, name
-        index = execution_order.index(existing)
-        index ? execution_order.insert(index +1, name) : execute_last(name)
+        dont_execute name
+        index = execution_order.index(existing.to_s)
+        index ? execution_order.insert(index +1, name.to_s) : execute_last(name)
+        execution_order.compact!
       end
 
       def execution_order
@@ -47,7 +57,7 @@ module CanTango
       end
 
       def available? name
-        available.include? name.to_sym
+        available.include? name.to_s
       end
 
       def all state

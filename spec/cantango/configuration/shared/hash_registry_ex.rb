@@ -1,15 +1,5 @@
 shared_examples_for 'Hash Registry' do
-  let(:hash1) do
-    {:a => 1, :b => 2}
-  end
-
-  let(:hash2) do
-    {:c => 3}
-  end
-
   describe 'default settings' do
-    its(:registered)  { should be_empty }
-
     describe 'defaults' do
       before do
         subject.default = hash1
@@ -44,11 +34,11 @@ shared_examples_for 'Hash Registry' do
     end
     
     it 'should respond to :symbol keys' do
-      subject[:c].should == 3
+      subject[:c].should == hash2[:c]
     end
 
     it "should respond to 'string' keys" do
-      subject['c'].should == 3
+      subject['c'].should == hash2[:c]
     end
   end
 
@@ -56,9 +46,9 @@ shared_examples_for 'Hash Registry' do
     before do
       subject.clean!
       subject.register hash1
-      subject[:d] = 5
+      subject[:d] = hash2[:c]
     end
-    specify { subject[:d].should == 5 }
+    specify { subject[:d].should == hash2[:c] }
 
   end
 end

@@ -1,6 +1,5 @@
 require 'rspec'
 require 'cantango'
-
 require 'cantango/configuration/shared/hash_registry_ex'
 
 describe CanTango::Configuration::Categories::Category do

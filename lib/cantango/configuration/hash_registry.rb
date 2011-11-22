@@ -24,10 +24,7 @@ module CanTango
       def clean!
         registered = Hashie::Mash.new
       end
-
-      def clear!
-        clean!
-      end
+      alias_method :clear!, :clean!
 
       def default!
         @registered = default

@@ -5,10 +5,11 @@ module CanTango
   class Configuration
     autoload_modules :Categories
     autoload_modules :Models, :Engines, :Ability
-    autoload_modules :User, :Guest, :UserAccount
-    autoload_modules :Roles, :RoleGroups, :Registry, :RoleRegistry, :HashRegistry, :PermitRegistry, :CandidateRegistry, :Factory
-    autoload_modules :SpecialPermits, :Autoload, :Adapters, :Permits, :Debug, :Modes, :Orms, :Localhosts, :Hooks
+    autoload_modules :Registry, :RoleRegistry, :HashRegistry, :CandidateRegistry
+    autoload_modules :Roles, :RoleGroups, :SpecialPermits
+    autoload_modules :Factory, :Autoload, :Adapters, :Debug, :Modes, :Orms, :Localhosts, :Hooks
     autoload_modules :Users, :UserAccounts
+    autoload_modules :User, :Guest, :UserAccount
 
     include Singleton
 
@@ -20,8 +21,8 @@ module CanTango
 
     def self.components
       [
-        :guest, :autoload, :user, :user_account, :models, :roles, :role_groups,
-        :engines, :users, :user_accounts, :categories, :adapters, :permits, :debug,
+        :guest, :autoload, :user, :user_account, :models, :modes, :roles, :role_groups,
+        :engines, :users, :user_accounts, :categories, :adapters, :debug,
         :localhosts, :orms, :hooks
       ]
     end
@@ -44,7 +45,6 @@ module CanTango
     # i.e compilation of rules via sourcify
     def enable_defaults!
       engines.all :off
-      engine(:permit).set :on
       adapters.use :compiler
     end
 
@@ -59,9 +59,11 @@ module CanTango
     end
 
     def clear!
-      CanTango::Configuration.components.each do |c|
-        comp = send(c)
-        comp.send(:clear!) if comp.respond_to? :clear!
+      CanTango::Configuration.components.each do |component|
+        if respond_to? component
+          component = send(component) 
+          component.send(:clear!) if component.respond_to? :clear!
+        end
       end
       engines.clear!
     end

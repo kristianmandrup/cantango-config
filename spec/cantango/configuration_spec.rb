@@ -43,8 +43,8 @@ describe CanTango::Configuration do
     before do
       subject.enable_defaults!
     end
-    specify { subject.engine(:permit).on?.should be_true }
-    specify { subject.engine(:permission).on?.should be_false }
+    specify { subject.engine(:permit).should be_nil }
+    specify { subject.engine(:permission).should be_nil }
   end
 
   describe 'enable_helpers' do

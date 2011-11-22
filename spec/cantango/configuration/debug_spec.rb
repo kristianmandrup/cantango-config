@@ -1,34 +1,5 @@
 require 'spec_helper'
 
-class Menu
-end
-
-class WaiterRolePermit < CanTango::RolePermit
-  def initialize ability
-    super
-  end
-
-  protected
-
-  def permit_rules
-    can :read, Menu
-    cannot :write, Menu
-  end
-end
-
-class ChefRolePermit < CanTango::RolePermit
-  def initialize ability
-    super
-  end
-
-  protected
-
-  def permit_rules
-    can :publish, Menu
-    can :write, Menu
-  end
-end
-
 class Context
   include CanTango::Api::User::Ability
 end

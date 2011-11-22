@@ -1,5 +1,7 @@
-PATH
-  remote: /Users/kmandrup/pr/stanislaw/cantango
+GIT
+  remote: git://github.com/kristianmandrup/cantango
+  revision: 22542e4532eb80a50434b6e5a8531367d0fbc4f1
+  branch: major-refactor
   specs:
     cantango (0.9.5)
       cancan (>= 1.4)

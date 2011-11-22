@@ -1,8 +1,10 @@
 source :rubygems
 
 gem 'rails', '>= 3.1'
-gem 'cantango', :path => '/Users/kmandrup/pr/stanislaw/cantango', :branch => 'major-refactor'
-# :git => 'git://github.com/kristianmandrup/cantango', :branch => 'major-refactor'
+gem 'cantango', :git => 'git://github.com/kristianmandrup/cantango', :branch => 'major-refactor' 
+#:path => '/Users/kmandrup/repos/private/cantango' 
+# :git => 'git://github.com/kristianmandrup/cantango', :branch => 'major-refactor' 
+#, :path => '/Users/kmandrup/pr/stanislaw/cantango', :branch => 'major-refactor'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

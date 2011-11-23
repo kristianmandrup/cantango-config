@@ -16,6 +16,22 @@ module CanTango
       def off?
         !on?
       end
+      
+      def debug_writer= proc
+        raise ArgumentError, "Debug writer must be callable (lambda or Proc), was: #{proc}" if !callable?(proc)
+        @debug_writer = proc
+      end
+      
+      def write msg
+        @debug_writer ||= Proc.new{|msg| puts msg}
+        @debug_writer.call(msg)
+      end
+      
+      protected
+      
+      def callable? obj
+        obj && obj.respond_to?(:call)
+      end      
     end
   end
 end

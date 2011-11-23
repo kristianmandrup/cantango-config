@@ -6,7 +6,7 @@ module CanTango
       end
 
       def factory factory = nil
-        raise "Factory must be a callable, either a lambda or Proc" if !callable? factory
+        raise ArgumentError, "Factory must be a callable (lambda or Proc), was: #{proc}" if !callable? factory
         @factory = factory
       end
 

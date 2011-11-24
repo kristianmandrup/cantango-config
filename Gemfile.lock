@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/kmandrup/pr/stanislaw/cantango-core
+GIT
+  remote: git://github.com/kristianmandrup/cantango-core.git
+  revision: 8c63aafa6bb0f01586e828a9ee69bf7648082340
   specs:
     cantango-core (1.0.0.beta1)
       cancan (>= 1.4)

@@ -6,6 +6,3 @@ end
 
 class Comment
 end
-
-class Project
-end

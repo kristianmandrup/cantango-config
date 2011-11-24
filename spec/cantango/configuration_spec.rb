@@ -1,10 +1,9 @@
-require 'rspec'
-require 'cantango'
+require 'spec_helper'
 require 'fixtures/models'
 
 @user = User.new('kris', 'kris@gmail.com')
 
-class CanTango::CustomAbility < CanTango::Ability
+class CanTango::CustomAbility < CanTango::Ability::Base
   def initialize candidate, options = {}
     'custom'
   end

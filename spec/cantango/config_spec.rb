@@ -1,5 +1,9 @@
-# require 'spec_helper'
+# dir = File.dirname(__FILE__) + '/../../lib'
+# $LOAD_PATH.unshift(dir)
 require 'rspec'
+# puts dir
+# require File.expand_path('cantango/config.rb', dir)
+
 require 'cantango/config'
 
 describe 'cantango/config' do

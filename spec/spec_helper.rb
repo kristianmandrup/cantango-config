@@ -1,6 +1,6 @@
 require 'rspec'
 require 'cantango'
-require 'cantango-config'
+require 'cantango/config'
 
 require 'active_record'
 

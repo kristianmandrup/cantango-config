@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'rails', '>= 3.1'
-gem 'cantango-core', :path => '/Users/kmandrup/pr/stanislaw/cantango-core' # :git => 'git://github.com/kristianmandrup/cantango-core.git'
+gem 'cantango-core',  :git => 'git://github.com/kristianmandrup/cantango-core.git' # :path => '/Users/kmandrup/pr/stanislaw/cantango-core'
 
 group :development do
   gem "bundler",  ">= 1.1.rc"

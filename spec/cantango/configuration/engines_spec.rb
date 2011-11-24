@@ -1,5 +1,4 @@
-require 'rspec'
-require 'cantango'
+require 'spec_helper'
 require 'cantango/configuration/shared/hash_registry_ex'
 
 class MyEngine < CanTango::Engine

@@ -1,5 +1,4 @@
-require 'rspec'
-require 'cantango'
+require 'spec_helper'
 require 'cantango/configuration/shared/factory_ex'
 
 class MyFactory

@@ -1,5 +1,4 @@
-require 'rspec'
-require 'cantango'
+require 'spec_helper'
 
 class BaseAccount
   def initialize
@@ -7,8 +6,8 @@ class BaseAccount
 end
 
 
-describe CanTango::Configuration::UserAccount do
-  subject { CanTango.config.user_account }
+describe CanTango::Configuration::Account do
+  subject { CanTango.config.account }
 
   describe 'set base class' do
     before do

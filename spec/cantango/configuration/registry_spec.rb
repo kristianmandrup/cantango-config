@@ -1,6 +1,4 @@
-require 'rspec'
-require 'cantango'
-
+require 'spec_helper'
 require 'cantango/configuration/shared/role_registry_ex'
 
 class MyRegi < CanTango::Configuration::Registry

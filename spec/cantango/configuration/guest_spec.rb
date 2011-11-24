@@ -1,5 +1,4 @@
-require 'rspec'
-require 'cantango'
+require 'spec_helper'
 require 'fixtures/models'
 
 describe CanTango::Configuration::Guest do

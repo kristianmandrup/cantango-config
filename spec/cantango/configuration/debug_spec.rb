@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 class Context
-  include CanTango::Api::User::Ability
+  include CanTango::Api::Ability::User
 end
 
 # Note: This config feature is currently not used, but could potentially be of use in the future

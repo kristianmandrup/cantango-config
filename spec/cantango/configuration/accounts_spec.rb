@@ -8,8 +8,8 @@ end
 class AdminAccount
 end
 
-describe CanTango::Configuration::UserAccounts do
-  subject { CanTango.config.user_accounts }
+describe CanTango::Configuration::Accounts do
+  subject { CanTango.config.accounts }
 
   it_should_behave_like "Candidate Registry" do
     let(:hash1) do

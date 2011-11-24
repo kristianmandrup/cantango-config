@@ -59,18 +59,13 @@ module CanTango
       end
 
       def try_model model_string
-        model = try_class(model_string.singularize) || try_class(model_string) 
+        model = find_first_class(model_string.singularize, model_string) 
         raise "No model #{model_string} defined!" if !model
         model
       end
 
       def grep reg_exp
         available_models.grep reg_exp
-      end
-
-      def ar_models
-        # Sugar-high #to_strings didn't work here!
-        ActiveRecord::Base.descendants
       end
 
       def categories

@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class UserAccount
+    class Account
       include Singleton
       include ClassExt
 
@@ -9,7 +9,7 @@ module CanTango
       end
 
       def base_class
-        @clazz ||= (::UserAccount if defined? ::UserAccount)
+        @clazz ||= try_class[::UserAccount, ::Account]
       end
 
       def base_class= clazz

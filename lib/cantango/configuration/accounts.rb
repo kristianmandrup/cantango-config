@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class UserAccounts < CandidateRegistry
+    class Accounts < CandidateRegistry
       include Singleton
     end
   end

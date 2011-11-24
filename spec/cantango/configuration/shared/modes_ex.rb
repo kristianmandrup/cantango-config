@@ -1,6 +1,3 @@
-require 'rspec'
-require 'cantango'
-
 shared_examples_for 'Modes' do
   describe 'valid mode=' do
     before do

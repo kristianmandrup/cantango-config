@@ -14,7 +14,7 @@ module CanTango
         alias_method :[]=, :register
 
         def << hash
-          raise "Must be a hash" if !hash.is_a? Hash
+          raise "Must be a hash" if !hash.is_a?(::Hash)
           hash.each_pair do |key, value|
             register key, value
           end
@@ -59,11 +59,11 @@ module CanTango
           class_registry.types
         end
 
-        class NameRegistry < Registry
+        class NameRegistry < Registry::Base
           include Singleton
         end
 
-        class ClassRegistry < Registry
+        class ClassRegistry < Registry::Base
           include Singleton
 
           def types

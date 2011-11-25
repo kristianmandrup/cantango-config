@@ -9,7 +9,7 @@ module CanTango
         attr_accessor :registered
 
         def types= *types
-          @types = types.select {|t| t.is_a? Class }
+          @types = types.select {|t| t.is_a?(Class) }
         end
 
         def types

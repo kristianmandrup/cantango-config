@@ -10,7 +10,7 @@ module CanTango
         end
 
         def types
-          [Hash]
+          [::Hash]
         end
 
         def value_methods
@@ -31,7 +31,7 @@ module CanTango
         end
 
         def << hash
-          raise "Must be a hash" if !hash.is_a? Hash
+          raise "Must be a Hash" if !hash? hash
           registered.merge!(hash) and return if value_methods.empty? && value_types.empty?
           hash.each_pair do |key, value|
             registered[key] = value if value_api.all?{|m| value.respond_to(m)} && value.any_kind_of?(value_types)
@@ -49,7 +49,7 @@ module CanTango
         end
 
         def register hash
-          raise "Must be a hash" if !hash.is_a? Hash
+          raise "Must be a hash" if !hash? hash
           registered.merge! hash
         end
 
@@ -86,6 +86,12 @@ module CanTango
         def default= hash
           @default = Hashie::Mash.new hash
         end
+        
+        protected
+        
+        def hash? value
+          value.is_a?(::Hash)
+        end          
       end
     end
   end

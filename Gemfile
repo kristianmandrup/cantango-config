@@ -5,8 +5,6 @@ group :default do
   gem 'sugar-high',       '>= 0.6.0'
   gem 'sweetloader',      '~> 0.1.0'
   gem 'hashie'
-  
-  # gem 'cantango-core',  :git => 'git://github.com/kristianmandrup/cantango-core.git'
 end
 
 group :development do
@@ -16,6 +14,8 @@ group :development do
 end
 
 group :test do
+  gem 'cantango-core',  :git => 'git://github.com/kristianmandrup/cantango-core.git'
+
   gem 'require_all', '~> 1.2.0'
 
   gem 'forgery'

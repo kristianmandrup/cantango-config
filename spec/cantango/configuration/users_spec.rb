@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/candidate_registry_ex'
+require 'cantango/configuration/shared/registry/candidate_ex'
 
 class User
 end

@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Localhosts < Registry
+    class Localhosts < Registry::Base
       include Singleton
       
       def default

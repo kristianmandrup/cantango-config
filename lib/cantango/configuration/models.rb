@@ -9,7 +9,7 @@ module CanTango
       include ClassExt
 
       def actions
-        @actions ||= HashRegistry.new
+        @actions ||= Registry::Hash.new
       end
 
       def by_reg_exp reg_exp

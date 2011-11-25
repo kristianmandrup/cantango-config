@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Categories < HashRegistry
+    class Categories < Registry::Hash
 
       include Singleton
 

@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Engines < HashRegistry
+    class Engines < Registry::Hash
       autoload_modules :Permission, :Engine
 
       include Singleton

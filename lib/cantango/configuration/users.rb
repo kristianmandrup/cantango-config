@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Users < CandidateRegistry
+    class Users < Registry::Candidate
       include Singleton
     end
   end

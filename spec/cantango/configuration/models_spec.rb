@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/hash_registry_ex'
+require 'cantango/configuration/shared/registry/hash_ex'
 require 'fixtures/models/project'
 
 CanTango.debug!

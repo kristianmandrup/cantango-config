@@ -8,5 +8,6 @@ require 'cantango/core'
 AutoLoader.namespaces = {:CanTango => 'cantango'}
 
 module CanTango
-  autoload_modules :Configuration
+  autoload_modules :Configuration, :ClassMethods
+  include ClassMethods
 end

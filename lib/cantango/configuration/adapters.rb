@@ -1,7 +1,6 @@
 module CanTango
   class Configuration
-    class Adapters < Registry
-
+    class Adapters < Registry::Base
       include Singleton
 
       def adapter name

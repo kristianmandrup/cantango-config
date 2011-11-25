@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Hooks < HashRegistry
+    class Hooks < Registry::Hash
       include Singleton
       
       def value_methods

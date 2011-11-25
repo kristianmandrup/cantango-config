@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/registry_ex'
+require 'cantango/configuration/shared/registry/base_ex'
 
 describe CanTango::Configuration::Localhosts do
   subject { CanTango.config.localhosts }

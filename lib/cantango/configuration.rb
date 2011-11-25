@@ -2,11 +2,21 @@ require 'set'
 require 'singleton'
 
 module CanTango
+  # The main entry point to configure CanTango
+  class << self
+    def configure &block
+      conf = CanTango::Configuration.instance
+      yield conf if block
+      conf
+    end
+
+    alias_method :config, :configure
+  end
+  
   class Configuration
     autoload_modules :Categories
     autoload_modules :Models, :Engines, :Ability
-    autoload_modules :Registry, :RoleRegistry, :HashRegistry, :CandidateRegistry
-    autoload_modules :Roles, :RoleGroups, :SpecialPermits
+    autoload_modules :Registry
     autoload_modules :Factory, :Autoload, :Adapters, :Debug, :Modes, :Orms, :Localhosts, :Hooks
     autoload_modules :Account, :Accounts
     autoload_modules :User, :Guest, :Users

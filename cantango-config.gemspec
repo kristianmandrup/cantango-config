@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "cantango-config"
+  s.name = %q{cantango-config}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Kristian Mandrup"]
-  s.date = "2011-11-25"
-  s.description = "Configuration DSL for configuring CanTango"
-  s.email = "kmandrup@gmail.com"
+  s.authors = [%q{Kristian Mandrup}]
+  s.date = %q{2011-11-25}
+  s.description = %q{Configuration DSL for configuring CanTango}
+  s.email = %q{kmandrup@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.mdown"
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "cantango-config.gemspec",
     "lib/cantango/adapter/compiler.rb",
     "lib/cantango/adapter/moneta.rb",
+    "lib/cantango/class_methods.rb",
     "lib/cantango/config.rb",
     "lib/cantango/configuration.rb",
     "lib/cantango/configuration/ability.rb",
@@ -35,14 +36,12 @@ Gem::Specification.new do |s|
     "lib/cantango/configuration/accounts.rb",
     "lib/cantango/configuration/adapters.rb",
     "lib/cantango/configuration/autoload.rb",
-    "lib/cantango/configuration/candidate_registry.rb",
     "lib/cantango/configuration/categories.rb",
     "lib/cantango/configuration/debug.rb",
     "lib/cantango/configuration/engine.rb",
     "lib/cantango/configuration/engines.rb",
     "lib/cantango/configuration/factory.rb",
     "lib/cantango/configuration/guest.rb",
-    "lib/cantango/configuration/hash_registry.rb",
     "lib/cantango/configuration/hooks.rb",
     "lib/cantango/configuration/localhosts.rb",
     "lib/cantango/configuration/models.rb",
@@ -56,6 +55,9 @@ Gem::Specification.new do |s|
     "lib/cantango/configuration/modes.rb",
     "lib/cantango/configuration/orms.rb",
     "lib/cantango/configuration/registry.rb",
+    "lib/cantango/configuration/registry/base.rb",
+    "lib/cantango/configuration/registry/candidate.rb",
+    "lib/cantango/configuration/registry/hash.rb",
     "lib/cantango/configuration/user.rb",
     "lib/cantango/configuration/users.rb",
     "spec/cantango/config_spec.rb",
@@ -64,7 +66,6 @@ Gem::Specification.new do |s|
     "spec/cantango/configuration/accounts_spec.rb",
     "spec/cantango/configuration/adapters_spec.rb",
     "spec/cantango/configuration/autoload_spec.rb",
-    "spec/cantango/configuration/candidate_registry_spec.rb",
     "spec/cantango/configuration/categories_spec.rb",
     "spec/cantango/configuration/debug_spec.rb",
     "spec/cantango/configuration/engines/engine_shared.rb",
@@ -72,17 +73,17 @@ Gem::Specification.new do |s|
     "spec/cantango/configuration/factory_spec.rb",
     "spec/cantango/configuration/guest/find_guest_default_way_spec.rb",
     "spec/cantango/configuration/guest_spec.rb",
-    "spec/cantango/configuration/hash_registry_spec.rb",
     "spec/cantango/configuration/localhosts_spec.rb",
     "spec/cantango/configuration/models_spec.rb",
     "spec/cantango/configuration/orms_spec.rb",
-    "spec/cantango/configuration/registry_spec.rb",
-    "spec/cantango/configuration/shared/candidate_registry_ex.rb",
+    "spec/cantango/configuration/registry/base_spec.rb",
+    "spec/cantango/configuration/registry/candidate_spec.rb",
+    "spec/cantango/configuration/registry/hash_spec.rb",
     "spec/cantango/configuration/shared/factory_ex.rb",
-    "spec/cantango/configuration/shared/hash_registry_ex.rb",
     "spec/cantango/configuration/shared/modes_ex.rb",
-    "spec/cantango/configuration/shared/registry_ex.rb",
-    "spec/cantango/configuration/shared/role_registry_ex.rb",
+    "spec/cantango/configuration/shared/registry/base_ex.rb",
+    "spec/cantango/configuration/shared/registry/candidate_ex.rb",
+    "spec/cantango/configuration/shared/registry/hash_ex.rb",
     "spec/cantango/configuration/user_spec.rb",
     "spec/cantango/configuration/users_spec.rb",
     "spec/cantango/configuration_spec.rb",
@@ -100,11 +101,11 @@ Gem::Specification.new do |s|
     "spec/migrations/001_create_projects.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = "http://github.com/kristianmandrup/cantango-config"
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
-  s.summary = "Configuration for Cantango"
+  s.homepage = %q{http://github.com/kristianmandrup/cantango-config}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.6}
+  s.summary = %q{Configuration for Cantango}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

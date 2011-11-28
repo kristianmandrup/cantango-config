@@ -1,6 +1,8 @@
 require 'set'
 require 'singleton'
 
+require 'cantango/configuration'
+
 module CanTango
   # The main entry point to configure CanTango
   class << self

@@ -1,8 +1,6 @@
 module CanTango
   class Configuration
     class Engines < Registry::Hash
-      autoload_modules :Permission, :Engine
-
       include Singleton
       include Enumerable
 

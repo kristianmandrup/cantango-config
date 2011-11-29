@@ -1,7 +1,7 @@
 module CanTango
   class Configuration
     class Models
-      autoload_modules :Generic, :ActiveRecord, :DataMapper, :MongoMapper, :Mongoid
+      autoload_modules :Generic, :ActiveRecord, :DataMapper, :Mongo, :MongoMapper, :Mongoid
       autoload_modules :Actions
 
       include CanTango::Helpers::Debug

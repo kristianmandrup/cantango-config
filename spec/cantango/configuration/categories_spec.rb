@@ -1,11 +1,11 @@
 require 'spec_helper'
 require 'cantango/configuration/shared/registry/hash_ex'
 
-describe CanTango::Configuration::Categories::Category do
-  subject { CanTango::Configuration::Categories::Category.new }
+describe CanTango::Configuration::Category do
+  subject { CanTango::Configuration::Category.new }
     specify { subject.has_any?(:x).should_not be_true }
 
-  subject { CanTango::Configuration::Categories::Category.new :a, :b }
+  subject { CanTango::Configuration::Category.new :a, :b }
     specify { subject.has_any?(:a).should be_true }
 end
 

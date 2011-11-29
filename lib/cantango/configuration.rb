@@ -16,10 +16,9 @@ module CanTango
   end
   
   class Configuration
-    autoload_modules :Categories
-    autoload_modules :Models, :Engines, :Ability
-    autoload_modules :Registry
-    autoload_modules :Factory, :Autoload, :Adapters, :Debug, :Modes, :Orms, :Localhosts, :Hooks
+    autoload_modules :Models, :Registry, :Engines, :Factory, :Modes, :Ability
+    autoload_modules :Categories, :Category
+    autoload_modules :Autoload, :Adapters, :Debug, :Orms, :Localhosts, :Hooks
     autoload_modules :Account, :Accounts
     autoload_modules :User, :Guest, :Users
 

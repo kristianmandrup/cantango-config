@@ -5,7 +5,8 @@ require 'sweetloader'
 
 require 'cantango/core'
 
-AutoLoader.namespaces = {:CanTango => 'cantango'}
+SweetLoader.namespaces = {:CanTango => 'cantango'}
+SweetLoader.mode = :require
 
 module CanTango
   autoload_modules :Configuration, :ClassMethods

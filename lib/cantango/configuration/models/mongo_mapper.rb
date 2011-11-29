@@ -1,7 +1,7 @@
 module CanTango
   class Configuration
     class Models
-      module MongoMapper < Mongo
+      class MongoMapper < Mongo
         def models
           MongoMapper.database.collections
         end

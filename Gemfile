@@ -1,10 +1,10 @@
 source :rubygems
 
 group :default do
-  gem 'rails', '>= 3.1'
-  gem 'sugar-high',       '>= 0.6.0'
-  gem 'sweetloader',      '~> 0.1.0'
-  gem 'hashie'
+  gem 'rails',        '>= 3.1'
+  gem 'sugar-high',   '>= 0.6.0'
+  gem 'sweetloader',  '~> 0.1.5'
+  gem 'hashie',       '~> 0.4.0'
 
   gem 'cantango-core',  :git => 'git://github.com/kristianmandrup/cantango-core.git'
 end

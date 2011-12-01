@@ -26,7 +26,7 @@ module CanTango
 
     def ability
       @ability ||= conf::Ability.instance
-      @ability.default_class ||= CanTango::Ability::Executor::Base
+      @ability.default_class ||= CanTango::Ability::Executor::Base # from cantango-core
       @ability
     end
 

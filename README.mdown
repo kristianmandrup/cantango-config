@@ -1,8 +1,46 @@
 # Cantango Configuration
 
-Configuration for [CanTango](https://github.com/kristianmandrup/cantango)
+Configuration for [CanTango](https://github.com/kristianmandrup/cantango).
+
+## Status: Dec 1 2011
 
 The Configuration DSL has now been almost fully "spec'ed".
+
+## Dependencies
+
+This extension depends on the CanTango [core](https://github.com/kristianmandrup/cantango-core) and follows the extension conventions as described there.
+
+## Core extensions
+
+* YAML Loader - use of Config to set where (which folder) to load the YAML file from
+
+## Configuration
+
+Configuration allows configuration of the following components:
+
+* Ability
+* Account
+* Accounts
+* Adapters
+* Categories
+* Debug
+* Engines
+* Guest
+* Hooks
+* Localhosts
+* Models
+* Modes
+* Orms
+* User
+* Users
+
+Example: 
+
+```ruby
+CanTango.config.accounts do |accounts|
+  # configure accounts
+end
+```
 
 ## Contributing to cantango-config
  

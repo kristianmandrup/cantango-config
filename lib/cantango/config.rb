@@ -12,3 +12,4 @@ module CanTango
   autoload_modules :Configuration, :ClassMethods
   include ClassMethods
 end
+require 'cantango/config_ext'

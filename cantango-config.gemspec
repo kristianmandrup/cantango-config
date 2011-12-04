@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cantango-config}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Kristian Mandrup}]
-  s.date = %q{2011-11-25}
+  s.date = %q{2011-12-04}
   s.description = %q{Configuration DSL for configuring CanTango}
   s.email = %q{kmandrup@gmail.com}
   s.extra_rdoc_files = [
@@ -30,6 +30,9 @@ Gem::Specification.new do |s|
     "lib/cantango/adapter/moneta.rb",
     "lib/cantango/class_methods.rb",
     "lib/cantango/config.rb",
+    "lib/cantango/config_ext.rb",
+    "lib/cantango/config_ext/loader.rb",
+    "lib/cantango/config_ext/loader/yaml.rb",
     "lib/cantango/configuration.rb",
     "lib/cantango/configuration/ability.rb",
     "lib/cantango/configuration/account.rb",
@@ -37,9 +40,11 @@ Gem::Specification.new do |s|
     "lib/cantango/configuration/adapters.rb",
     "lib/cantango/configuration/autoload.rb",
     "lib/cantango/configuration/categories.rb",
+    "lib/cantango/configuration/category.rb",
     "lib/cantango/configuration/debug.rb",
     "lib/cantango/configuration/engine.rb",
     "lib/cantango/configuration/engines.rb",
+    "lib/cantango/configuration/execution_modes.rb",
     "lib/cantango/configuration/factory.rb",
     "lib/cantango/configuration/guest.rb",
     "lib/cantango/configuration/hooks.rb",
@@ -56,7 +61,7 @@ Gem::Specification.new do |s|
     "lib/cantango/configuration/orms.rb",
     "lib/cantango/configuration/registry.rb",
     "lib/cantango/configuration/registry/base.rb",
-    "lib/cantango/configuration/registry/candidate.rb",
+    "lib/cantango/configuration/registry/clazz.rb",
     "lib/cantango/configuration/registry/hash.rb",
     "lib/cantango/configuration/user.rb",
     "lib/cantango/configuration/users.rb",
@@ -70,19 +75,21 @@ Gem::Specification.new do |s|
     "spec/cantango/configuration/debug_spec.rb",
     "spec/cantango/configuration/engines/engine_shared.rb",
     "spec/cantango/configuration/engines_spec.rb",
+    "spec/cantango/configuration/execution_modes_spec.rb",
     "spec/cantango/configuration/factory_spec.rb",
     "spec/cantango/configuration/guest/find_guest_default_way_spec.rb",
     "spec/cantango/configuration/guest_spec.rb",
     "spec/cantango/configuration/localhosts_spec.rb",
     "spec/cantango/configuration/models_spec.rb",
+    "spec/cantango/configuration/modes_spec.rb",
     "spec/cantango/configuration/orms_spec.rb",
     "spec/cantango/configuration/registry/base_spec.rb",
     "spec/cantango/configuration/registry/candidate_spec.rb",
     "spec/cantango/configuration/registry/hash_spec.rb",
+    "spec/cantango/configuration/shared/execution_modes_ex.rb",
     "spec/cantango/configuration/shared/factory_ex.rb",
-    "spec/cantango/configuration/shared/modes_ex.rb",
     "spec/cantango/configuration/shared/registry/base_ex.rb",
-    "spec/cantango/configuration/shared/registry/candidate_ex.rb",
+    "spec/cantango/configuration/shared/registry/clazz_ex.rb",
     "spec/cantango/configuration/shared/registry/hash_ex.rb",
     "spec/cantango/configuration/user_spec.rb",
     "spec/cantango/configuration/users_spec.rb",
@@ -113,8 +120,8 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 3.1"])
       s.add_runtime_dependency(%q<sugar-high>, [">= 0.6.0"])
-      s.add_runtime_dependency(%q<sweetloader>, ["~> 0.1.0"])
-      s.add_runtime_dependency(%q<hashie>, [">= 0"])
+      s.add_runtime_dependency(%q<sweetloader>, ["~> 0.1.6"])
+      s.add_runtime_dependency(%q<hashie>, ["~> 0.4.0"])
       s.add_runtime_dependency(%q<cantango-core>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 1.1.rc"])
       s.add_development_dependency(%q<jeweler>, [">= 1.6.4"])
@@ -123,8 +130,8 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<rails>, [">= 3.1"])
       s.add_dependency(%q<sugar-high>, [">= 0.6.0"])
-      s.add_dependency(%q<sweetloader>, ["~> 0.1.0"])
-      s.add_dependency(%q<hashie>, [">= 0"])
+      s.add_dependency(%q<sweetloader>, ["~> 0.1.6"])
+      s.add_dependency(%q<hashie>, ["~> 0.4.0"])
       s.add_dependency(%q<cantango-core>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 1.1.rc"])
       s.add_dependency(%q<jeweler>, [">= 1.6.4"])
@@ -134,8 +141,8 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<rails>, [">= 3.1"])
     s.add_dependency(%q<sugar-high>, [">= 0.6.0"])
-    s.add_dependency(%q<sweetloader>, ["~> 0.1.0"])
-    s.add_dependency(%q<hashie>, [">= 0"])
+    s.add_dependency(%q<sweetloader>, ["~> 0.1.6"])
+    s.add_dependency(%q<hashie>, ["~> 0.4.0"])
     s.add_dependency(%q<cantango-core>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 1.1.rc"])
     s.add_dependency(%q<jeweler>, [">= 1.6.4"])

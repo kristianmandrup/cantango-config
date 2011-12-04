@@ -4,7 +4,7 @@ module CanTango
   class Configuration
     class Engine
       include Singleton
-      include CanTango::Configuration::Modes
+      include CanTango::Configuration::ExecutionModes
 
       def set state = :on
         raise ArgumentError, "Must be :on or :off" unless !state || [:on, :off].include?(state)

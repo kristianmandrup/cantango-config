@@ -1,18 +1,18 @@
 require 'spec_helper'
 require 'cantango/configuration/shared/registry/clazz_ex'
 
-class User
+class ModeA
 end
 
-class Admin
+class ModeB
 end
 
-describe CanTango::Configuration::Users do
-  subject { CanTango.config.users }
+describe CanTango::Configuration::Modes do
+  subject { CanTango.config.modes }
 
   it_should_behave_like "Clazz Registry" do
     let(:hash1) do
-      {:a => User, :b => Admin}
+      {:a => ModeA, :b => ModeB}
     end        
   end
 end

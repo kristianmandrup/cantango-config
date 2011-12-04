@@ -5,7 +5,7 @@ module CanTango
       include ClassExt
 
       include CanTango::Configuration::Factory
-      include CanTango::Configuration::Modes
+      include CanTango::Configuration::ExecutionModes
     end
   end
 end

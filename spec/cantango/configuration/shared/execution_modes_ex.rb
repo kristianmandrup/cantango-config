@@ -1,4 +1,4 @@
-shared_examples_for 'Modes' do
+shared_examples_for 'Execution Modes' do
   describe 'valid mode=' do
     before do
       subject.mode = :cache

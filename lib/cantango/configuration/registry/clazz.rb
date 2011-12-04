@@ -4,7 +4,7 @@ require 'sugar-high/kind_of'
 module CanTango
   class Configuration
     module Registry
-      class Candidate
+      class Clazz
         def register label, value
           raise "first arg must be a label, was: #{label}" if !label.kind_of_label?
           raise "second arg must be a valid Class, was: #{value}" if !valid? value

@@ -4,7 +4,7 @@ end
 class B
 end
 
-shared_examples_for 'Candidate Registry' do
+shared_examples_for 'Clazz Registry' do
   let(:hash1) do
     {:a => A, :b => B}
   end

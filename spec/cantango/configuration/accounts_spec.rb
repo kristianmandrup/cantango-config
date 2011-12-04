@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/registry/candidate_ex'
+require 'cantango/configuration/shared/registry/clazz_ex'
 
 class UserAccount
 end
@@ -10,7 +10,7 @@ end
 describe CanTango::Configuration::Accounts do
   subject { CanTango.config.accounts }
 
-  it_should_behave_like "Candidate Registry" do
+  it_should_behave_like "Clazz Registry" do
     let(:hash1) do
       {:a => UserAccount, :b => AdminAccount}
     end    

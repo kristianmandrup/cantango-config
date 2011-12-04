@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Accounts < Registry::Candidate
+    class Accounts < Registry::Clazz
       include Singleton
     end
   end

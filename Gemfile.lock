@@ -32,7 +32,7 @@ GEM
     arel (2.2.1)
     builder (3.0.0)
     cancan (1.6.7)
-    cantango-core (0.1.4)
+    cantango-core (0.1.5)
       cancan (>= 1.4)
       hashie
       rails (>= 3.0.1)
@@ -139,7 +139,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (>= 1.1.rc)
-  cantango-core
+  cantango-core (~> 0.1.5)
   cutter
   database_cleaner
   dkastner-moneta (>= 1.0)

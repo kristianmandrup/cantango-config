@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{cantango-config}
-  s.version = "0.1.4"
+  s.name = "cantango-config"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Kristian Mandrup}]
-  s.date = %q{2011-12-06}
-  s.description = %q{Configuration DSL for configuring CanTango}
-  s.email = %q{kmandrup@gmail.com}
+  s.authors = ["Kristian Mandrup"]
+  s.date = "2011-12-06"
+  s.description = "Configuration DSL for configuring CanTango"
+  s.email = "kmandrup@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.mdown"
@@ -108,11 +108,11 @@ Gem::Specification.new do |s|
     "spec/migrations/001_create_projects.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/kristianmandrup/cantango-config}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.6}
-  s.summary = %q{Configuration for Cantango}
+  s.homepage = "http://github.com/kristianmandrup/cantango-config"
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.10"
+  s.summary = "Configuration for Cantango"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -122,7 +122,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<sugar-high>, [">= 0.6.0"])
       s.add_runtime_dependency(%q<sweetloader>, ["~> 0.1.6"])
       s.add_runtime_dependency(%q<hashie>, ["~> 0.4.0"])
-      s.add_runtime_dependency(%q<cantango-core>, ["~> 0.1.5"])
+      s.add_runtime_dependency(%q<cantango-core>, ["~> 0.1.6"])
       s.add_development_dependency(%q<bundler>, [">= 1.1.rc"])
       s.add_development_dependency(%q<jeweler>, [">= 1.6.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
@@ -132,7 +132,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<sugar-high>, [">= 0.6.0"])
       s.add_dependency(%q<sweetloader>, ["~> 0.1.6"])
       s.add_dependency(%q<hashie>, ["~> 0.4.0"])
-      s.add_dependency(%q<cantango-core>, ["~> 0.1.5"])
+      s.add_dependency(%q<cantango-core>, ["~> 0.1.6"])
       s.add_dependency(%q<bundler>, [">= 1.1.rc"])
       s.add_dependency(%q<jeweler>, [">= 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
@@ -143,7 +143,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<sugar-high>, [">= 0.6.0"])
     s.add_dependency(%q<sweetloader>, ["~> 0.1.6"])
     s.add_dependency(%q<hashie>, ["~> 0.4.0"])
-    s.add_dependency(%q<cantango-core>, ["~> 0.1.5"])
+    s.add_dependency(%q<cantango-core>, ["~> 0.1.6"])
     s.add_dependency(%q<bundler>, [">= 1.1.rc"])
     s.add_dependency(%q<jeweler>, [">= 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])

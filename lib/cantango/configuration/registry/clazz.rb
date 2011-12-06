@@ -44,11 +44,11 @@ module CanTango
         end
 
         def name_registry
-          NameRegistry.instance
+          @name_registry ||=NameRegistry.new
         end
 
         def class_registry
-          ClassRegistry.instance
+          @class_registry ||= ClassRegistry.new
         end
 
         def value_methods
@@ -60,11 +60,9 @@ module CanTango
         end
 
         class NameRegistry < Registry::Base
-          include Singleton
         end
 
         class ClassRegistry < Registry::Base
-          include Singleton
 
           def types
             [Class]

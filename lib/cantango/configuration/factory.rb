@@ -22,8 +22,10 @@ module CanTango
       end
 
       def default_factory obj = nil, opts = {}
-        raise "Default factory must be defined" if !default_class
-        default_class.new obj, options.merge(opts)
+        clazz_meth = send(:factor_class_method) if respond_to? :factor_class_method
+        clazz_meth ||= :default_class
+        raise "Default factory must be defined" if !send(clazz_meth)
+        send(clazz_meth).new obj, options.merge(opts)
       end
 
       attr_reader :default_class

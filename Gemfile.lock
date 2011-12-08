@@ -32,9 +32,9 @@ GEM
     arel (2.2.1)
     builder (3.0.0)
     cancan (1.6.7)
-    cantango-core (0.1.9)
+    cantango-core (0.1.9.2)
       cancan (>= 1.4)
-      hashie
+      hashie (~> 1.2)
       rails (>= 3.0.1)
       sugar-high (>= 0.6.0)
       sweetloader (~> 0.1.5)
@@ -52,7 +52,7 @@ GEM
       tins (~> 0.3)
     forgery (0.5.0)
     git (1.2.5)
-    hashie (0.4.0)
+    hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
     jeweler (1.6.4)
@@ -109,7 +109,7 @@ GEM
       sexp_processor (~> 3.0)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
-    sexp_processor (3.0.8)
+    sexp_processor (3.0.9)
     sourcify (0.5.0)
       file-tail (>= 1.0.5)
       ruby2ruby (>= 1.2.5)
@@ -128,7 +128,7 @@ GEM
       i18n
     thor (0.14.6)
     tilt (1.3.3)
-    tins (0.3.3)
+    tins (0.3.4)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
@@ -145,7 +145,7 @@ DEPENDENCIES
   dkastner-moneta (>= 1.0)
   factory_girl
   forgery
-  hashie (~> 0.4.0)
+  hashie (~> 1.2)
   jeweler (>= 1.6.4)
   rails (>= 3.1)
   rcov

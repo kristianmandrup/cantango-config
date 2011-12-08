@@ -1,13 +1,17 @@
 module CanTango
   class Configuration
     module Factory
-      def clear!
+      def clear_factory!
         @factory = nil
       end
 
-      def factory factory = nil
-        raise ArgumentError, "Factory must be a callable (lambda or Proc), was: #{proc}" if !callable? factory
-        @factory = factory
+      def factory proc = nil
+        raise ArgumentError, "Factory must be a callable (lambda or Proc), was: #{proc}" unless callable? proc
+        @factory = proc
+      end
+
+      def get_factory
+        @factory
       end
 
       alias_method :factory=, :factory
@@ -22,9 +26,9 @@ module CanTango
       end
 
       def default_factory obj = nil, opts = {}
-        clazz_meth = send(:factor_class_method) if respond_to? :factor_class_method
-        clazz_meth ||= :default_class
-        raise "Default factory must be defined" if !send(clazz_meth)
+        clazz_meth = send(:factory_class_method) if respond_to? :factory_class_method
+        clazz_meth = :default_class unless clazz_meth && respond_to?(clazz_meth)
+        raise "Default factory must be defined via call to ##{clazz_meth}" unless send(clazz_meth)
         send(clazz_meth).new obj, options.merge(opts)
       end
 

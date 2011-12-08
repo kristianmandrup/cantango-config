@@ -3,7 +3,7 @@ class CustomFactory
 
   def initialize name, options = {}
     @name, @options = [name, options]
-  end
+  end  
 end
 
 shared_examples_for 'Factory' do

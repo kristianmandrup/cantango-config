@@ -15,4 +15,8 @@ describe CanTango::Configuration::Accounts do
       {:a => UserAccount, :b => AdminAccount}
     end    
   end
+  
+  describe 'register_account' do
+    specify { subject.register_class(AdminAccount).registered.should include(:admin) }
+  end
 end

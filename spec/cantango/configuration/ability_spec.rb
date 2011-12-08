@@ -35,8 +35,8 @@ describe CanTango::Configuration::Ability do
     specify { subject.default_class.should == CanTango::Ability::Base }
   end
 
-  describe 'factor_class_method' do
-    specify { subject.factor_class_method.should == :default_executor_class }
+  describe 'factory_class_method' do
+    specify { subject.factory_class_method.should == :default_executor_class }
   end
 
 end

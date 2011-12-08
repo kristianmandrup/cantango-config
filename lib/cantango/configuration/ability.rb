@@ -20,7 +20,7 @@ module CanTango
         @default_class ||= CanTango::Ability::Base
       end
       
-      def factor_class_method
+      def factory_class_method
         :default_executor_class
       end
     end

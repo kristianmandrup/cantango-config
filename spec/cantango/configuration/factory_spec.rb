@@ -27,7 +27,7 @@ describe CanTango::Configuration::Factory do
 
   it_should_behave_like 'Factory'
   
-  describe 'using factor_class_method to point to default_class' do
+  describe 'using factory_class_method to point to default_class' do
     before :each do
       subject.clear_factory!
     end

@@ -1,5 +1,5 @@
 module CanTango
-  class Configuration
+  class Config
     class Orms < CanTango::Registry::Base
       include Singleton
     end

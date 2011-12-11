@@ -1,7 +1,7 @@
 module CanTango
   class Config
     class Ability
-      sweetload :Modes, :ExecutionModes
+      sweetload :Engine, :Modes
       
       include Singleton
       include ClassExt

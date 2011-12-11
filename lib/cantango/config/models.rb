@@ -11,7 +11,7 @@ module CanTango
       def use *names
         names = names.select_symbols
         if names.include? :guest_user
-          require 'cantango/user/guest'
+          require 'cantango/model/user/guest'
         end
       end
 

@@ -1,7 +1,7 @@
 module CanTango
   class Config
     module ClassMethods
-      def included(base)
+      def self.extended base
         base.class_eval do
           components.each do |conf_module|
             class_eval %{

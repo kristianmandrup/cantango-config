@@ -1,5 +1,15 @@
 module CanTango
   module ClassMethods
+    def self.extended base
+    end
+    
+    def configure &block
+      conf = CanTango::Config.instance
+      yield conf if block
+      conf
+    end
+
+    alias_method :config, :configure
     # Engine hook
     # Run after the initializers are ran for all Railties (including the application itself), but before eager loading and the middleware stack is built. 
     # More importantly, will run upon every request in development, but only once (during boot-up) in production and test.

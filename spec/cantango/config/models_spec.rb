@@ -32,6 +32,13 @@ describe CanTango::Configuration::Models do
     specify { subject.available_models.should_not be_empty }
     specify { subject.available_models.should include('Project') }
   end
+
+  describe 'use :guest_user' do
+    before do
+      subject.models.use :guest_user
+    end
+    specify { defined?(CanTango::Model::Guest).should be_true }
+  end
   
   describe 'by_reg_exp' do
   end

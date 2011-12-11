@@ -1,5 +1,5 @@
 module CanTango
-  class Configuration
+  class Config
     class Hooks < CanTango::Registry::Hash
       include Singleton
 

@@ -26,7 +26,7 @@ module CanTango
     extend ClassMethods
 
     def ability
-      @ability ||= CanTango::Configuration::Ability.instance
+      @ability ||= CanTango::Config::Ability.instance
       @ability.default_class ||= CanTango::Ability::Executor::Modal # from cantango-core
       @ability
     end

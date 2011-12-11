@@ -31,16 +31,9 @@ describe CanTango::Config do
     end
   end
 
-  describe 'include_models :default_guest_user' do
+  describe 'default_settings!' do
     before do
-      subject.include_models :default_guest_user
-    end
-    specify { defined?(::Guest).should be_true }
-  end
-
-  describe 'defaults_setting!' do
-    before do
-      subject.defaults_setting!
+      subject.default_settings!
     end
     specify { subject.engine(:permit).should be_nil }
     specify { subject.engine(:permission).should be_nil }
@@ -92,14 +85,6 @@ describe CanTango::Config do
   end
   
   describe 'clear!' do
-    before do
-      subject.roles.exclude :user
-      subject.role_groups.exclude :admins
-
-      subject.clear!
-    end
-
-    specify { subject.roles.excluded.should be_empty }
-    specify { subject.role_groups.excluded.should be_empty }
+    pending
   end
 end

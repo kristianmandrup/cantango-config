@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/registry/base_ex'
+require 'cantango/registry/shared/base_ex'
 
-class MyRegi < CanTango::Configuration::Registry::Base
+class MyRegi < CanTango::Registry::Base
 end
 
 describe MyRegi do

@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/registry/base_ex'
+require 'cantango/registry/shared/base_ex'
 
 describe CanTango::Configuration::Orms do
   subject { CanTango.config.orms }

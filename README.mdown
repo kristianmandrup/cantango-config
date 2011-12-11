@@ -42,6 +42,22 @@ CanTango.config.accounts do |accounts|
 end
 ```
 
+## Registry
+
+The Registry namespace contains registries useful for configuration and other purposes.
+
+* CanTango::Registry
+  * Base
+  * Hash
+  * Clazz
+
+## Adapter
+
+* Compiler
+* Moneta
+
+The Compiler and Moneta adapters are used when Caching/Persisting rules in a data store.
+
 ## Contributing to cantango-config
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

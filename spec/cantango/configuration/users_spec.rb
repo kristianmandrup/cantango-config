@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/registry/clazz_ex'
+require 'cantango/registry/shared/clazz_ex'
 
 class User
 end

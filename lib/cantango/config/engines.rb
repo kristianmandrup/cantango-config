@@ -12,7 +12,7 @@ module CanTango
       # engine registry is a simple hash
       def register hash
         hash.each_pair do |name, engine_class|
-          raise "Class must implement the CanTango Engine API. You can start by sublclassing CanTango::Engine" unless self.class.valid_engine?? engine_class
+          raise "Class must implement the CanTango::Engine API." unless self.class.valid_engine?(engine_class)
           raise "Name of engine must be a String or Symbol" if !name.kind_of_label?
           registered[name.to_s] = engine_class
         end

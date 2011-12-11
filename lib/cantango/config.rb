@@ -11,12 +11,12 @@ SweetLoader.namespaces = {:CanTango => 'cantango'}
 SweetLoader.mode = :require
 
 module CanTango
-  autoload_modules :Registry, :ClassMethods, :Category
+  sweetload :Registry, :ClassMethods, :Category
   extend ClassMethods
 
   class Config  
-    sweetload :Models, :Engines, :Factory, :ExecutionModes, :Modes, :Ability
-    sweetload :Categories, :Category
+    sweetload :Models, :Engines, :Factory, :Ability
+    sweetload :Categories
     sweetload :Autoload, :Adapters, :Debug, :Orms, :Localhosts, :Hooks, :Helpers
     sweetload :Account, :Accounts
     sweetload :User, :Guest, :Users

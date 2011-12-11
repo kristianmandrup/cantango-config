@@ -1,15 +1,19 @@
-def available
-  registered_names
-end
+class CanTango::Config::Engines
+  module Available
+    def available
+      registered_names
+    end
 
-def available? name
-  available.include? name.to_s
-end
+    def available? name
+      available.include? name.to_s
+    end
 
-def all state
-  available.each {|engine| send(engine).set state }
-end
+    def all state
+      available.each {|engine| send(engine).set state }
+    end
 
-def any? state
-  available.any? {|engine| send(engine).send(:"#{state}?") if respond_to?(engine) }
+    def any? state
+      available.any? {|engine| send(engine).send(:"#{state}?") if respond_to?(engine) }
+    end
+  end
 end

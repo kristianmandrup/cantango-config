@@ -3,12 +3,8 @@ require 'sugar-high/kind_of'
 
 module CanTango
   module Registry
-    class Hash
+    class Hash < CanTango::Registry::Base
       module InstanceMethods
-        def self.included base
-          base.send :include, CanTango::Registry::Base
-        end
-
         def types= *types
           raise "This is a Hash registry!"
         end

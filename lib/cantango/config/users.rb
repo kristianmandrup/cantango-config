@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Users < Registry::Clazz
+    class Users < CanTango::Registry::Clazz
       include Singleton
       
       def register_user clazz

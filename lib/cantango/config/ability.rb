@@ -1,11 +1,21 @@
 module CanTango
-  class Configuration
+  class Config
     class Ability
+      sweetload :Modes, :ExecutionModes
+      
       include Singleton
       include ClassExt
 
-      include CanTango::Configuration::Factory
-      include CanTango::Configuration::ExecutionModes
+      include CanTango::Config::Factory
+
+      def execution_modes
+        ExecutionModes.instance
+      end
+
+      def execution_modes
+        Modes.instance
+      end
+
       
       def default_executor_class
         @default_executor_class ||= CanTango::Ability::Executor::Modal

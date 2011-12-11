@@ -1,5 +1,5 @@
 module CanTango
-  class Configuration
+  class Config
     module Factory
       def clear_factory!
         @factory = nil

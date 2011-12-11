@@ -1,7 +1,6 @@
 module CanTango
-  class Configuration
-    class Categories < Registry::Hash
-
+  class Config
+    class Categories < CanTango::Registry::Hash
       include Singleton
 
       def [] label
@@ -11,7 +10,7 @@ module CanTango
       end
 
       def category label, &block
-        cat = Category.new self[label]
+        cat = CanTango::Category.new self[label]
         yield cat if block
         cat
       end

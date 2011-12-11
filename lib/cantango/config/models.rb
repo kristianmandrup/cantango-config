@@ -1,15 +1,22 @@
 module CanTango
-  class Configuration
+  class Config
     class Models
-      autoload_modules :Generic, :ActiveRecord, :DataMapper, :Mongo, :MongoMapper, :Mongoid
-      autoload_modules :Actions
+      sweetload :Generic, :ActiveRecord, :DataMapper, :Mongo, :MongoMapper, :Mongoid
+      sweetload :Actions
 
       include CanTango::Helpers::Debug
       include Singleton
       include ClassExt
 
+      def use *names
+        names = names.select_symbols
+        if names.include? :guest_user
+          require 'cantango/user/guest'
+        end
+      end
+
       def actions
-        @actions ||= Registry::Hash.new
+        @actions ||= CanTango::Registry::Hash.new
       end
 
       def by_reg_exp reg_exp

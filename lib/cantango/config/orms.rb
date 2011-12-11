@@ -1,6 +1,6 @@
 module CanTango
   class Configuration
-    class Orms < Registry::Base
+    class Orms < CanTango::Registry::Base
       include Singleton
     end
   end

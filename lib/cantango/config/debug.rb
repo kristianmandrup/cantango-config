@@ -1,5 +1,5 @@
 module CanTango
-  class Configuration
+  class Config
     # Note: This config feature is currently not used, but could potentially be of use in the future
     class Debug
       include Singleton

@@ -5,7 +5,7 @@ class Context
 end
 
 # Note: This config feature is currently not used, but could potentially be of use in the future
-describe CanTango::Configuration::Debug do
+describe CanTango::Config::Debug do
   let(:context) { Context.new }
   subject       { CanTango.config.debug }
 

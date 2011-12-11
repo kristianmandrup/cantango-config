@@ -6,7 +6,7 @@ class BaseAccount
 end
 
 
-describe CanTango::Configuration::Account do
+describe CanTango::Config::Account do
   subject { CanTango.config.account }
 
   describe 'set base class' do

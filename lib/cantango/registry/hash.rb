@@ -1,9 +1,6 @@
-require 'singleton'
-require 'sugar-high/kind_of'
-
 module CanTango
   module Registry
-    class Hash < CanTango::Registry::Base
+    class Hash < Base
       module InstanceMethods
         def types= *types
           raise "This is a Hash registry!"

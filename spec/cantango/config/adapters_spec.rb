@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CanTango::Configuration::Adapters do
+describe CanTango::Config::Adapters do
   subject { CanTango.config.adapters }
 
   describe 'should run adapter for moneta' do

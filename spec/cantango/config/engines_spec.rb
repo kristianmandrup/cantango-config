@@ -8,7 +8,7 @@ class MyOtherEngine < CanTango::Engine
 end
 
 
-describe CanTango::Configuration::ExecutionModes do
+describe CanTango::Config::ExecutionModes do
   subject { CanTango.config.engines }
 
   it_should_behave_like "Hash Registry" do

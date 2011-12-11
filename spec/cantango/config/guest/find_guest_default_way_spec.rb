@@ -12,7 +12,7 @@ class MyUser
   end
 end
 
-describe CanTango::Configuration::Guest do
+describe CanTango::Config::Guest do
   describe 'default settings with class methods for #guest defined' do
     before do
       CanTango.config.user.base_class = MyUser

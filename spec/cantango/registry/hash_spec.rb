@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'cantango/registry/shared/hash_ex'
 
-class MyRegis < CanTango::Configuration::Registry::Hash
+class MyRegis < CanTango::Registry::Hash
 end
 
 describe MyRegis do

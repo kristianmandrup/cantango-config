@@ -1,10 +1,10 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/factory_ex'
+require 'cantango/config/shared/factory_ex'
 
 AliasedCustomFactory = CustomFactory
 
 class MyFactory
-  include CanTango::Configuration::Factory 
+  include CanTango::Config::Factory 
   include Singleton
   
   def default_class
@@ -22,7 +22,7 @@ class MyFactory
   end
 end
 
-describe CanTango::Configuration::Factory do
+describe CanTango::Config::Factory do
   subject { MyFactory.instance }
 
   it_should_behave_like 'Factory'

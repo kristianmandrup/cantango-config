@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'fixtures/models'
 
-describe CanTango::Configuration::Autoload do
+describe CanTango::Config::Autoload do
   subject { CanTango.config.autoload }
 
   describe 'default settings' do

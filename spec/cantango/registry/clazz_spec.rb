@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'cantango/registry/shared/clazz_ex'
 
-class MyReg < CanTango::Configuration::Registry::Clazz
+class MyReg < CanTango::Registry::Clazz
 end
 
 describe MyReg do

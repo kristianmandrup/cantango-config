@@ -1,11 +1,11 @@
 require 'spec_helper'
 require 'cantango/configuration/shared/factory_ex'
-require 'cantango/configuration/shared/execution_modes_ex'
+require 'cantango/configuration/ability/execution_modes_ex'
 
 class MyExecutor
 end
 
-describe CanTango::Configuration::Ability do
+describe CanTango::Config::Ability do
   subject { CanTango.config.ability }
     
   it_should_behave_like 'Factory'

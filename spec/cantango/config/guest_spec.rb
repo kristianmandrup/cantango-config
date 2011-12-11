@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'fixtures/models'
 
-describe CanTango::Configuration::Guest do
+describe CanTango::Config::Guest do
   before do
     CanTango.config.user.base_class = User
     CanTango.config.user_account.base_class = UserAccount

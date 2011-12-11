@@ -7,7 +7,7 @@ end
 class AdminAccount
 end
 
-describe CanTango::Configuration::Accounts do
+describe CanTango::Config::Accounts do
   subject { CanTango.config.accounts }
 
   it_should_behave_like "Clazz Registry" do

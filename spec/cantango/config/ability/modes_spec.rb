@@ -7,7 +7,7 @@ end
 class ModeB
 end
 
-describe CanTango::Configuration::Modes do
+describe CanTango::Config::Modes do
   subject { CanTango.config.modes }
 
   it_should_behave_like "Clazz Registry" do

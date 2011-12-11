@@ -14,7 +14,7 @@ class AdminAccount
 end
 
 
-describe CanTango::Configuration::Users do
+describe CanTango::Config::Users do
   subject { CanTango.config.users }
 
   it_should_behave_like "Clazz Registry" do

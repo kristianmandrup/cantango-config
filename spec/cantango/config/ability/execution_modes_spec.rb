@@ -5,10 +5,10 @@ class User
 end
 
 class MyAbility
-  include CanTango::Configuration::ExecutionModes
+  include CanTango::Config::ExecutionModes
 end
 
-describe CanTango::Configuration::ExecutionModes do
+describe CanTango::Config::ExecutionModes do
   subject { MyAbility.new }
 
   it_should_behave_like "Execution Modes"

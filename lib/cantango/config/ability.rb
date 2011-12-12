@@ -8,14 +8,9 @@ module CanTango
 
       include CanTango::Config::Factory
 
-      def execution_modes
-        ExecutionModes.instance
-      end
-
-      def execution_modes
+      def modes
         Modes.instance
       end
-
       
       def default_executor_class
         @default_executor_class ||= CanTango::Ability::Executor::Modal

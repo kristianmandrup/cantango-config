@@ -1,5 +1,5 @@
 module CanTango
-  class Configuration
+  class Config
     class Users < CanTango::Registry::Clazz
       include Singleton
       

@@ -1,10 +1,10 @@
 module CanTango
-  class Configuration
+  class Config
     class Adapters < CanTango::Registry::Base
       include Singleton
 
       def adapter name
-        raise "Unknown adapter #{name}" if !available_adapters.include? name.to_sym
+        raise "Unknown adapter #{name}" if !available.include? name.to_sym
         require "cantango/adapter/#{name}"
       end
 
@@ -12,7 +12,7 @@ module CanTango
         names.each {|name| adapter name }
       end
 
-      def available_adapters
+      def available
         [:moneta, :compiler]
       end
     end

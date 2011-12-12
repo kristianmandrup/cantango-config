@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'cantango/configuration/shared/factory_ex'
-require 'cantango/configuration/ability/execution_modes_ex'
+require 'cantango/config/shared/factory_ex'
+require 'cantango/config/ability/execution_modes_ex'
 
 class MyExecutor
 end

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'fixtures/models'
 
 describe CanTango::Config::Autoload do
   subject { CanTango.config.autoload }

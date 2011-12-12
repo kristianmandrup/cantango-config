@@ -13,6 +13,8 @@ module CanTango
         if names.include? :guest_user
           require 'cantango/model/user/guest'
         end
+      rescue LoadError => e
+        debug e.message
       end
 
       def actions
@@ -41,13 +43,13 @@ module CanTango
         @excluded ||= []
       end
 
-      def available_models
-        all_models - excluded.map {|m| m.to_s.camelize}
+      def available
+        all - excluded.map {|m| m.to_s.camelize}
       end
 
       protected
 
-      def all_models
+      def all
         CanTango.config.orms.registered.compact.inject([]) do |result, orm|
           adapter = adapter_for(orm)
           result << (adapter.models.map(&:name) if adapter)

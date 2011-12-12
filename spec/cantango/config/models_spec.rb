@@ -29,13 +29,13 @@ describe CanTango::Configuration::Models do
       orms.register :active_record
     end
 
-    specify { subject.available_models.should_not be_empty }
-    specify { subject.available_models.should include('Project') }
+    specify { subject.available.should_not be_empty }
+    specify { subject.available.should include('Project') }
   end
 
   describe 'use :guest_user' do
     before do
-      subject.models.use :guest_user
+      subject.use :guest_user
     end
     specify { defined?(CanTango::Model::Guest).should be_true }
   end

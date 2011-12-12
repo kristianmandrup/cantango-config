@@ -1,13 +1,8 @@
 require 'spec_helper'
 
-class Context
-  include CanTango::Api::Ability::User
-end
-
 # Note: This config feature is currently not used, but could potentially be of use in the future
 describe CanTango::Config::Debug do
-  let(:context) { Context.new }
-  subject       { CanTango.config.debug }
+  subject { CanTango.config.debug }
 
   describe 'should set debug mode :on' do
     before do

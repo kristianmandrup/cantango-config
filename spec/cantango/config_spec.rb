@@ -35,8 +35,7 @@ describe CanTango::Config do
     before do
       subject.default_settings!
     end
-    specify { subject.engine(:permit).should be_nil }
-    specify { subject.engine(:permission).should be_nil }
+    pending
   end
 
   describe 'localhosts' do

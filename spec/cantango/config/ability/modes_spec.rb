@@ -7,8 +7,8 @@ end
 class ModeB
 end
 
-describe CanTango::Config::Modes do
-  subject { CanTango.config.modes }
+describe CanTango::Config::Ability::Modes do
+  subject { CanTango.config.ability.modes }
 
   it_should_behave_like "Clazz Registry" do
     let(:hash1) do

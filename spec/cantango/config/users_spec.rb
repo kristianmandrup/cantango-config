@@ -32,11 +32,11 @@ describe CanTango::Config::Users do
       config.accounts.register  :user,  UserAccount
       config.accounts.register  :admin, AdminAccount
 
-      config.modes.register :no_cache, CanTango::Ability::Mode::NoCache
+      config.ability.modes.register :no_cache, CanTango::Ability::Mode::NoCache
     end
     
     specify do
-      CanTango.config.modes.registered.should == [:no_cache]
+      CanTango.config.ability.modes.registered.should == [:no_cache]
     end
   end
 end

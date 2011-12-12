@@ -2,9 +2,10 @@ module CanTango
   class Config
     class Ability
       class Modes < CanTango::Registry::Clazz
-        sweetload :Execution
         include Singleton
         
+        sweetload :Execution
+
         def execution
           Execution.instance
         end

@@ -15,11 +15,10 @@ module CanTango
 
       alias_method :user=, :user
 
-      def account account = nil, &block
-        return (@account || guest_account) if !account && !block
-        @account = account || yield
+      def account acc = nil, &block
+        return (@account || acc) if !acc && !block
+        @account = acc || yield
       end
-      alias_method :user_account, :account
       alias_method :account=, :account
 
       def default_user?
@@ -49,7 +48,7 @@ module CanTango
       end
 
       def base_account_class
-        CanTango.config.user_account.base_class
+        CanTango.config.account.base_class
       end
     end
   end

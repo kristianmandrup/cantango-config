@@ -5,7 +5,7 @@ module CanTango
   module Registry
     class Base
       module InstanceMethods
-        attr_writer   :default
+        attr_writer   :default, :available
         attr_accessor :registered
 
         def types= *types
@@ -19,6 +19,10 @@ module CanTango
 
         def clean!
           @registered = []
+        end
+
+        def reset!
+          @registered = default
         end
 
         alias_method :clear!, :clean!
@@ -48,6 +52,15 @@ module CanTango
 
         def default
           @default ||= []
+        end
+        
+        def valid? label
+          return available.include?(label) if respond_to?(:available) && !available.empty?
+          true
+        end
+
+        def available
+          []
         end
       end
       include InstanceMethods

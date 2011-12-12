@@ -19,7 +19,7 @@ module CanTango
         [
           :guest, :autoload, :user, :account, :models, :modes, :roles, :role_groups,
           :engines, :users, :accounts, :categories, :adapters, :debug,
-          :localhosts, :orms, :hooks
+          :localhosts, :orms, :hooks, :helpers
         ]
       end
     end

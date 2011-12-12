@@ -4,7 +4,7 @@ require 'fixtures/models'
 describe CanTango::Config::Guest do
   before do
     CanTango.config.user.base_class = User
-    CanTango.config.user_account.base_class = UserAccount
+    CanTango.config.account.base_class = UserAccount
   end
 
   subject { CanTango.config.guest }

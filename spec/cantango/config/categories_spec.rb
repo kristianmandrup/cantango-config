@@ -13,16 +13,16 @@ describe CanTango::Config::Categories do
     end
 
     describe 'get index []' do
-      specify {
+      before do
         subject.register(:w => 'something non-array!')
-        lambda { subject.category('w') }.should raise_error
-      }
+      end
+
+      specify { subject.category(:w).should_not be_empty }
+      specify { subject.category('w').should be_empty }
     end
 
     describe 'category_has_subject?' do
-      specify {
-        subject.category('a').has_any?('B').should be_true 
-      }
+      specify { subject.category('a').has_any?('B').should be_true }
     end
 
     describe 'has_subject?' do

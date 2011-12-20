@@ -52,7 +52,7 @@ module CanTango
       def all
         CanTango.config.orms.registered.compact.inject([]) do |result, orm|
           adapter = adapter_for(orm)
-          result << (adapter.models.map(&:name) if adapter)
+          result << (adapter.available_models if adapter)
           result
         end.flatten.compact
       end
@@ -68,13 +68,18 @@ module CanTango
       end
 
       def try_model model_string
-        model = find_first_class(model_string.singularize, model_string) 
-        raise "No model #{model_string} defined!" if !model
+        model = find_first_class(models_to_finds model_string) 
+        raise "No model: #{models_to_finds model_string} defined!" if !model
         model
       end
 
+      def models_to_finds model_string
+        (model_string.singularize == model_string) ? model_string : [model_string.singularize, model_string]
+      end
+      
+      # from adapter
       def grep reg_exp
-        available_models.grep reg_exp
+        available.grep reg_exp
       end
 
       def categories

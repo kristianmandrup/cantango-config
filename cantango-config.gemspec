@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cantango-config}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Kristian Mandrup}]
-  s.date = %q{2011-12-12}
+  s.date = %q{2011-12-20}
   s.description = %q{Configuration DSL for configuring CanTango}
   s.email = %q{kmandrup@gmail.com}
   s.extra_rdoc_files = [

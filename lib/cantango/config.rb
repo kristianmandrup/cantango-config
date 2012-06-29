@@ -42,7 +42,7 @@ module CanTango
     end
 
     def clear!
-      CanTango::Configuration.components.each do |component|
+      CanTango::Config.components.each do |component|
         if respond_to? component
           component = send(component) 
           component.send(:clear!) if component.respond_to? :clear!

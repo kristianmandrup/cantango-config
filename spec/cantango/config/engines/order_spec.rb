@@ -49,7 +49,7 @@ describe CanTango::Config::Engines do
   describe 'execute_after' do
     before do
       subject.set_execution_order :my_other_engine, :my_engine
-      subject.execute_after :my_engine, :my_other_engine, 
+      subject.execute_after :my_engine, :my_other_engine
     end
 
     its(:execution_order) { should == ['my_engine', 'my_other_engine'] }

@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'cantango/config/shared/factory_ex'
-require 'cantango/config/ability/execution_modes_ex'
+# require 'cantango/config/ability/execution_modes_ex'
 
 class MyExecutor
 end
@@ -10,7 +10,7 @@ describe CanTango::Config::Ability do
     
   it_should_behave_like 'Factory'
 
-  it_should_behave_like 'Execution Modes'
+  # it_should_behave_like 'Execution Modes'
 
   describe 'default_executor_class' do
     specify { subject.default_executor_class.should == CanTango::Ability::Executor::Modal }

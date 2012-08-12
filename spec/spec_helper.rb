@@ -1,5 +1,5 @@
 require 'rspec'
-require 'cantango/config'
+require 'cantango-config'
 require 'active_record'
 
 require 'cutter'

@@ -20,7 +20,7 @@ module CanTango
     sweetload :Autoload, :Adapters, :Debug, :Orms, :Localhosts, :Hooks, :Helpers
     sweetload :Account, :Accounts
     sweetload :User, :Guest, :Users
-    sweetload :ClassMethods
+    sweetload :ClassMethods, :OnOff
 
     include Singleton
     extend ClassMethods

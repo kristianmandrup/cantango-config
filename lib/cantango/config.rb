@@ -15,12 +15,12 @@ module CanTango
   extend ClassMethods
 
   class Config  
-    sweetload :Models, :Engines, :Factory, :Ability
+    sweetload :Models, :OnOff, :Engines, :Factory, :Ability
     sweetload :Categories
     sweetload :Autoload, :Adapters, :Debug, :Orms, :Localhosts, :Hooks, :Helpers
     sweetload :Account, :Accounts
     sweetload :User, :Guest, :Users
-    sweetload :ClassMethods, :OnOff
+    sweetload :ClassMethods
 
     include Singleton
     extend ClassMethods
@@ -29,6 +29,10 @@ module CanTango
       @ability ||= CanTango::Config::Ability.instance
       @ability.default_class ||= CanTango::Ability::Executor::Modal # from cantango-core
       @ability
+    end
+
+    def engine name
+      engines[name.to_sym]
     end
 
     def debug!

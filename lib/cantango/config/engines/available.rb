@@ -8,12 +8,24 @@ class CanTango::Config::Engines
       available.include? name.to_s
     end
 
-    def all state
-      available.each {|engine| send(engine).set state }
+    def all state, &block
+      if block_given?
+        available.each do |name| 
+          engine = engine(name)
+          yield engine.engine_class if engine.is?(state)
+        end
+      else
+        available.map do |name| 
+          engine = engine(name)
+          engine.engine_class if engine.is?(state)
+        end.compact
+      end
     end
 
     def any? state
-      available.any? {|engine| send(engine).send(:"#{state}?") if respond_to?(engine) }
+      available.any? do |name| 
+        engine(name).is?(state) if available?(name)
+      end
     end
   end
 end

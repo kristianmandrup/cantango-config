@@ -16,28 +16,22 @@ module CanTango
 
       def find_engine name
         raise ArgumentError, "Must be label for an engine" if !name.kind_of_label?
-        name = name.to_s.singularize
-        engines.send(name) if engines.available? name
+        name = name.to_s
+        engines[name.to_s] if engines.available? name
+      end
+
+      def engines
+        CanTango.config.engines
       end
 
       class Engine
-        include Singleton
+        include CanTango::Config::OnOff
 
-        def set state = :on
-          raise ArgumentError, "Must be :on or :off" unless !state || [:on, :off].include?(state)
-          @state = state || :on
-        end
+        attr_reader :engine_class
 
-        def reset!
-          @state = nil
-        end
-
-        def on?
-          @state == :on
-        end
-
-        def off?
-          !on?
+        def initialize engine_class
+          @engine_class = engine_class
+          on!
         end
       end
     end

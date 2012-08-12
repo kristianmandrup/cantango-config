@@ -19,6 +19,10 @@ describe CanTango::Config do
     specify { subject.ability.should be_a CanTango::Config::Ability }
   end
 
+  describe 'engine' do
+    specify { subject.engine(:permits).should be_a CanTango::Config::Engine }
+  end
+
   describe 'hooks' do
     specify { subject.hooks.registered.should be_empty }
 

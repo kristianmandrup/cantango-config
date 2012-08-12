@@ -2,9 +2,13 @@
 
 Configuration for [CanTango](https://github.com/kristianmandrup/cantango).
 
-## Status: Dec 1 2011
+## Status: Aug 2012
 
 The Configuration DSL has now been almost fully "spec'ed".
+
+`169 examples, 12 failures, 4 pending`
+
+Please help fix the remaining specs ;)
 
 ## Dependencies
 
@@ -42,6 +46,175 @@ CanTango.config.accounts do |accounts|
 end
 ```
 
+## Ability
+
+* modes
+* default_executor_class
+* default_executor_class= clazz
+* default_class # CanTango::Ability::Base
+* factory_class_method # :default_executor_class
+
+### Modes
+
+Is a type of `Registry::Clazz`
+
+```ruby
+CanTango.config.ability do |ability|
+  ability.modes.register 
+end
+```
+
+Also has an `Execution` object
+
+`ability.modes.execution`
+
+* `available` # [:cache, :no_cache]
+* `default` # [:no_cache]
+
+
+## Account
+
+* clear!
+* base_class
+* base_class= clazz
+
+## Accounts
+
+* register_account clazz
+
+## Adapters
+
+* adapter name # load an adapter!
+* use *names # use one or more adapters
+* available # list adapters available
+
+## AutoLoad
+
+auto-load models and/or permits
+
+TODO: Refactor! Mofe all permits functionality to cantango-permits!
+
+## Categories
+
+* [] label
+* category label, &block
+* has_any? subject, &block
+* category_names_of_subject subject, &block
+* categories_of_subject subject, &block
+
+## Debug
+
+## Engines
+
+* Available
+* Order
+
+### Available
+
+* available
+* available? name
+* all state # - all engines in states :on or :off 
+* any? state # any engine in state :on or :off ?
+
+### Order
+
+* clear_order!
+* set_execution_order *names        
+* dont_execute name
+* execute_first name
+* execute_last name
+* execute_before existing, name
+* execute_after existing, name
+* execution_order
+
+## Factory
+
+## Guest
+
+* clear!
+* user user = nil, &block
+* account acc = nil, &block
+* default_user?
+* default_account?
+
+## Helpers
+
+* enable *names
+* enable_rest # enable REST
+
+## Hooks
+
+Kind of Hash Registry
+
+* value_methods
+
+## LocalHosts
+
+Kind of Base Registry
+
+* default # 'localhost', '127.0.0.1'
+
+## Models
+
+* use *names
+* actions
+* by_reg_exp reg_exp
+* by_category label
+* exclude *names
+* excluded
+* available
+
+### Actions
+
+Adapters:
+
+* ActiveRecord
+* DataMapper
+* Generic
+* Mongo
+* MongoMapper
+* Mongoid
+
+Actions
+
+* actions_for type
+* add_member action
+* add_collection action
+
+## Models
+
+* available_models
+
+## OnOff 
+
+include on/off functionality
+
+* on!
+* off!
+* on?
+* off?
+
+## Orms
+
+Kind of Base Registry
+
+## User
+
+* clear!
+* base_class       
+* base_class= clazz
+* unique_key_field
+* unique_key_field= key
+* relations= *relations
+* relations
+* default_relations # [:owner, :author, :writer, :user]
+
+## Users
+
+Kind of Clazz registry
+
+* register_user clazz
+
 ## Registry
 
 The Registry namespace contains registries useful for configuration and other purposes.
@@ -51,12 +224,43 @@ The Registry namespace contains registries useful for configuration and other pu
   * Hash
   * Clazz
 
-## Adapter
+### CanTango::Registry::Base
 
-* Compiler
-* Moneta
+* `types= *classes`
+* `types`
+* `clean!` or `clear!`
+* `reset!`
+* `register list` or `<< list`
+* `[] index`
+* `registered`
+* `registered? label`
+* `valid? label`
+* `available`
 
-The Compiler and Moneta adapters are used when Caching/Persisting rules in a data store.
+### CanTango::Registry::Clazz
+
+Inherits from `Base`
+
+* `#register cache: Caching`
+* `<< {cache: Caching, no_cache: NoCache}`
+* `registered`
+* `clean!`
+* `registered_classes`
+* `registered? name`
+* `registered_class? name`
+* `name_registry`
+* `class_registry`
+* `value_methods`
+* `value_types`
+
+### CanTango::Registry::Hash
+
+Inherits from `Base`
+
+* registered_names
+* registered_values
+
+
 
 ## Contributing to cantango-config
  

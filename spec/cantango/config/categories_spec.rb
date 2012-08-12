@@ -17,8 +17,8 @@ describe CanTango::Config::Categories do
         subject.register(:w => 'something non-array!')
       end
 
-      specify { subject.category(:w).should_not be_empty }
-      specify { subject.category('w').should be_empty }
+      specify { subject.category(:w).subjects.should_not be_empty }
+      specify { subject.category('w').subjects.should be_empty }
     end
 
     describe 'category_has_subject?' do

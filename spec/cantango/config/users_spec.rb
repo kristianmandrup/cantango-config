@@ -36,7 +36,7 @@ describe CanTango::Config::Users do
     end
     
     specify do
-      CanTango.config.ability.modes.registered.should == [:no_cache]
+      CanTango.config.ability.modes.registered.should include(:no_cache)
     end
   end
 end
